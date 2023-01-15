@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Routes, Route, useNavigate } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
 
 import './App.css';
 import UsersList from './components/UserList/UsersList';
@@ -12,7 +12,15 @@ import { UsersListProvider } from './utils/context';
 function App() {
 
   const [users, setUsers] = useState<User[]>([]);
-  const [userId, setUserID] = useState<Number>();
+  const [userId, setUserId] = useState<Number | null>(null);
+  const location = useLocation()
+
+  useEffect(() => {
+    if (location.pathname === "/") {
+      setUserId(null)
+    }
+  }, [location]);
+
 
   useEffect(() => {
     const fetchPost = async () => {
@@ -27,7 +35,7 @@ function App() {
   }, []);
 
   return (
-    <UsersListProvider value={{ users, userId, setUserID }}>
+    <UsersListProvider value={{ users, userId, setUserId }}>
       <div className="app">
         <MainHeader />
         <Routes>

@@ -47,6 +47,6 @@ export enum SectionName {
 
 export type UsersListContextProps = {
     users: User[],
-    userId?: Number,
-    setUserID: Function
+    userId: Number | null,
+    setUserId: Function
 }

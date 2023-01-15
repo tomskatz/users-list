@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { IoIosArrowBack } from "react-icons/io";
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import UsersListContext from "../../utils/context";
 import useGetUserById from "../../utils/getUserById";
 import { SectionName } from "../../utils/types";
@@ -9,7 +9,7 @@ import './UserInfo.scss';
 
 const UserInfo: React.FC = () => {
 
-    const { users, userId, setUserID } = useContext(UsersListContext);
+    const { users, userId, setUserId } = useContext(UsersListContext);
     const user = useGetUserById(users, Number(userId));
 
     const renderSections = () => {
@@ -25,7 +25,7 @@ const UserInfo: React.FC = () => {
                 <p className="subTitle">
                     {user.name.toUpperCase()}
                 </p>
-                <Link className="button" to={'/'} onClick={() => setUserID(null)}>
+                <Link className="button" to={'/'} onClick={() => setUserId(null)}>
                     <IoIosArrowBack className="arrow" />
                     <span className="btnBack">
                         Back

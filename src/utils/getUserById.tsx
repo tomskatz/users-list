@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { User } from "./types";
 
-const useGetUserById = (users: User[], id?: Number) => {
+const useGetUserById = (users: User[], id: Number | null) => {
 
     const [user, setUser] = useState<User>();
 

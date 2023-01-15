@@ -9,12 +9,12 @@ import './MainHeader.scss';
 
 const MainHeader: React.FC = () => {
 
-    const { users, userId } = useContext(UsersListContext)
+    const { users, userId, setUserId } = useContext(UsersListContext)
     const user = useGetUserById(users, userId);
 
     return <>
         <div className="breadcrumbs">
-            <Link key={"title"} to={'/'} className="header">Users List</Link>
+            <Link key={"title"} to={'/'} className="header" onClick={() => setUserId(null)}>Users List</Link>
             {
                 userId && <span> <IoIosArrowForward className="arrow" /> {user?.name}</span>
             }

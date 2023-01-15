@@ -7,7 +7,7 @@ import './UserCard.scss';
 
 const UserCard: React.FC<UserCardProps> = ({ user }) => {
 
-    const { setUserID } = useContext(UsersListContext)
+    const { setUserId } = useContext(UsersListContext)
 
     const getNameInitials = (name: string) => {
         const regex: RegExp = /(\b\S)?/g;
@@ -24,7 +24,7 @@ const UserCard: React.FC<UserCardProps> = ({ user }) => {
                 <span className="name"> {user.name} </span>
                 <span className="email"> {user.email} </span>
             </div>
-            <Link className="button" to={`/${user.id}`} onClick={() => setUserID(user.id)}>
+            <Link className="button" to={`/${user.id}`} onClick={() => setUserId(user.id)}>
                 More Info
             </Link>
         </div>
