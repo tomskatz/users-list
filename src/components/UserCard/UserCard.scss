@@ -6,9 +6,10 @@
     border-radius: 25px;
     background-color: white;
     height: 220px;
-    width: 220px;
+    width: 19%;
     border-color: #c5cacd;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    margin: 10px 0;
 
     .initials {
         font-size: 32px;
@@ -57,5 +58,30 @@
         &:hover {
             background-color: #458290;
         }
+    }
+}
+
+// TODO: remove and do with flex grow
+@media only screen and (max-width: 1200px) {
+    .userCard {
+        width: 24%;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .userCard {
+        width: 32%;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .userCard {
+        width: 49%;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .userCard {
+        width: 99%;
     }
 }
