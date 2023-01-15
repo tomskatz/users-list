@@ -1,37 +1,41 @@
-import {useState} from 'react';
-import {Routes, Route, useNavigate} from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { Routes, Route, useNavigate } from 'react-router-dom';
 
 import './App.css';
-import { styles } from './utils/styles';
-import UsersList from './components/UsersList';
-import UserInfo from './components/UserInfo';
+import UsersList from './components/UserList/UsersList';
+import UserInfo from './components/UserInfo/UserInfo';
+import MainHeader from './components/MainHeader/MainHeader';
 import { User } from './utils/types';
-import Title from './components/Title';
+import client from './api';
+import { UsersListProvider } from './utils/context';
 
 function App() {
 
-  const [user, setUser] = useState<User>();
+  const [users, setUsers] = useState<User[]>([]);
+  const [userId, setUserID] = useState<Number>();
 
-  const navigate = useNavigate();
-  //TODO: handle breadcramb logic when back from broser
-
-  const navigateToUser = (user: User) => {
-    setUser(user);
-    navigate(`/${user.name}`);
-  };
-
-  const navigateUsersList = () => {
-    navigate('/');
-  };
+  useEffect(() => {
+    const fetchPost = async () => {
+      try {
+        let response = await client.get('');
+        setUsers(response.data);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    fetchPost();
+  }, []);
 
   return (
-    <div style={styles.App}>
-      <Title userName={user?.name}/>
-      <Routes>
-          <Route path="/" element={<UsersList navigateToUser={navigateToUser} />} />
-          {user && <Route path={`/${user.name}`} element={<UserInfo user={user} navigateUsersList={navigateUsersList} />} />}
+    <UsersListProvider value={{ users, userId, setUserID }}>
+      <div className="app">
+        <MainHeader />
+        <Routes>
+          <Route path="/" element={<UsersList />} />
+          <Route path="/:userId" element={<UserInfo />} />
         </Routes>
-    </div>
+      </div>
+    </UsersListProvider>
   );
 }
 

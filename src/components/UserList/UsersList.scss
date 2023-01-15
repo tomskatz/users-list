@@ -1,0 +1,12 @@
+.userList {
+    .subTitle {
+        font-size: 20px;
+        color: #80b9c5;
+    }
+
+    .list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 32px;
+    }
+}

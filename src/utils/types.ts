@@ -1,3 +1,4 @@
+
 export type User = {
     id: number,
     name: string,
@@ -7,10 +8,10 @@ export type User = {
     phone: string,
     website: string,
     company: Company
-    
+
 }
 
-type Address = {
+export type Address = {
     street: string,
     suite: string,
     city: string,
@@ -23,17 +24,29 @@ type Geo = {
     lng: string,
 }
 
-type Company = {
+export type Company = {
     name: string,
     catchPhrase: string,
     bs: string,
 }
 
-export type UserPreviewProps = {
+export type UserCardProps = {
     user: User
-    navigateToUser: Function
 }
 
-export type UsersListProps = {
-    navigateToUser: Function
+export type InfoSectionProps = {
+    sectionName: string
+    user: User
+}
+
+export enum SectionName {
+    UserInfo = 'User Info',
+    Address = 'Address',
+    Company = 'Company'
+}
+
+export type UsersListContextProps = {
+    users: User[],
+    userId?: Number,
+    setUserID: Function
 }

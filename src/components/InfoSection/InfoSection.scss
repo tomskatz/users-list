@@ -1,0 +1,25 @@
+.infoSection {
+    display: flex;
+    flex-direction: column;
+
+    .sectionTitle {
+        display: flex;
+        font-size: 20px;
+        color: #5f949f;
+        font-weight: 700;
+
+
+        .icon {
+            padding-right: 10px;
+        }
+    }
+
+    .field {
+        line-height: 30px;
+
+        .fieldName {
+            font-weight: 700;
+        }
+    }
+
+}

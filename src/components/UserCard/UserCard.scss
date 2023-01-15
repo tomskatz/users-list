@@ -1,0 +1,88 @@
+.userCard {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 25px;
+    background-color: white;
+    height: 250px;
+    width: 18%;
+    border-color: #c5cacd;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
+    .initials {
+        font-size: 32px;
+        background-color: #f5f8fb;
+        border-radius: 50%;
+        margin: inherit;
+        padding: 16px;
+        color: #a8afb8;
+        height: 50px;
+        width: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .nameAndEmail {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        >span {
+            padding: 5px 0;
+
+            &.name {
+                font-weight: bold;
+            }
+
+            &.email {
+                color: #caccd8;
+            }
+        }
+
+
+    }
+
+    .button {
+        background-color: #6daebd;
+        border-radius: 5px;
+        color: white;
+        width: 100px;
+        text-align: center;
+        padding: 5px;
+        text-decoration: none;
+        font-size: 14px;
+        transition: background-color 0.5s ease;
+
+
+        &:hover {
+            background-color: #458290;
+        }
+    }
+}
+
+// TODO: remove and do with flex grow
+@media only screen and (max-width: 1200px) {
+    .userCard {
+        width: 24%;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .userCard {
+        width: 32%;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .userCard {
+        width: 49%;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .userCard {
+        width: 98%;
+    }
+}
