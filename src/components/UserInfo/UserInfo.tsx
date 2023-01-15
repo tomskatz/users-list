@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { IoIosArrowBack } from "react-icons/io";
 import { Link } from "react-router-dom";
+
 import UsersListContext from "../../utils/context";
 import useGetUserById from "../../utils/getUserById";
 import { SectionName } from "../../utils/types";
@@ -19,6 +20,7 @@ const UserInfo: React.FC = () => {
             )
         })
     }
+
     return <div className="userInfo">
         {user ? <>
             <div className="navigationTitle">

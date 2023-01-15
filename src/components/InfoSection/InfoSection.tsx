@@ -1,8 +1,9 @@
 import React, { ReactNode } from "react";
-import { InfoSectionProps, SectionName, User, Address, Company } from "../../utils/types";
 import { BiUser } from "react-icons/bi";
 import { CiHome } from "react-icons/ci";
 import { RiSuitcaseLine } from "react-icons/ri"
+
+import { InfoSectionProps, SectionName, User, Address, Company } from "../../utils/types";
 import './InfoSection.scss';
 
 
@@ -56,11 +57,9 @@ const InfoSection: React.FC<InfoSectionProps> = ({ sectionName, user }) => {
         )
     }
 
-    return <>
-        <div className="infoSection">
-            {renderSection()}
-        </div>
-    </>
+    return <div className="infoSection">
+        {renderSection()}
+    </div>
 };
 
 export default InfoSection;
