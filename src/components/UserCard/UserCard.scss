@@ -5,8 +5,8 @@
     align-items: center;
     border-radius: 25px;
     background-color: white;
-    height: 250px;
-    width: 18%;
+    height: 220px;
+    width: 220px;
     border-color: #c5cacd;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 
@@ -59,30 +59,5 @@
         &:hover {
             background-color: #458290;
         }
-    }
-}
-
-// TODO: remove and do with flex grow
-@media only screen and (max-width: 1200px) {
-    .userCard {
-        width: 24%;
-    }
-}
-
-@media only screen and (max-width: 1000px) {
-    .userCard {
-        width: 32%;
-    }
-}
-
-@media only screen and (max-width: 800px) {
-    .userCard {
-        width: 49%;
-    }
-}
-
-@media only screen and (max-width: 500px) {
-    .userCard {
-        width: 98%;
     }
 }

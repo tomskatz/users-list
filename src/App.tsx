@@ -16,10 +16,12 @@ function App() {
   const location = useLocation()
 
   useEffect(() => {
-    if (location.pathname === "/") {
+    if (location.pathname.length > 1) {
+      userId ? setUserId(userId) : setUserId(Number(location.pathname.slice(1)))
+    } else {
       setUserId(null)
     }
-  }, [location]);
+  }, [location, userId]);
 
 
   useEffect(() => {

@@ -1,4 +1,8 @@
 .userList {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
     .subTitle {
         font-size: 20px;
         color: #80b9c5;
@@ -7,6 +11,7 @@
     .list {
         display: flex;
         flex-wrap: wrap;
+        justify-content: space-between;
         gap: 32px;
     }
 }
