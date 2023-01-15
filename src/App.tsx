@@ -1,13 +1,14 @@
 import { useEffect, useState } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 
-import './App.css';
+
 import UsersList from './components/UserList/UsersList';
 import UserInfo from './components/UserInfo/UserInfo';
 import MainHeader from './components/MainHeader/MainHeader';
 import { User } from './utils/types';
 import client from './api';
 import { UsersListProvider } from './utils/context';
+import './App.css';
 
 function App() {
 
